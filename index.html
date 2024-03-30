@@ -1,0 +1,502 @@
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/4680bafef6.js" crossorigin="anonymous"></script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <link rel="stylesheet" href="custom.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>SMRT Recognition</title>
+</head>
+
+<body>
+  <header class="site-header d-flex align-items-center py-3 px-4 bg-light">
+    <div class="site-logo">
+      <a href="/"><img class="w-auto" alt="logo" src="images/Logo.png" /></a>
+    </div>
+    <div class="collapse-icon ms-3">
+      <img src="./icons/collapseIcon.png" width="30px" alt="collapse sidebar" />
+    </div>
+    <div class="header-searchbar ms-5">
+      <div class="bg-light rounded  border rounded-pill shadow-sm">
+        <div class="input-group border rounded-pill">
+          <input type="search" id="searchbar" placeholder="Search..." aria-describedby="button-addon1"
+            class="form-control border-0 bg-light">
+          <div class="input-group-append">
+            <button id="button-addon1" type="submit" class="btn mt-1 rounded-pill btn-link text-primary"><i
+                class="fa fa-search pt-1 mb-1 text-black"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-right d-flex ms-auto align-items-center">
+      <div class="icons-tray d-flex align-items-center gap-3 me-3">
+        <div class="header-icon icon-round">
+          <div class="dropdown dropend">
+            <button class="dropbtn button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-gear fa-2x text-white"></i>
+            </button>
+            <div class="dropdown-content dropdown-menu">
+              <a href="#">My Profile</a>
+              <hr>
+              <a href="#">My Panel </a>
+              <hr>
+              <a href="#">Security</a>
+              <hr>
+              <a href="#">Log out</a>
+            </div>
+          </div>
+        </div>
+        <div class="header-icon  icon-round">
+          <button type="button" class="btn " data-toggle="tooltip" data-placement="bottom"
+            title="7 People Loged In">
+           <span class="text-white"> 7</span>
+          </button>
+        </div>
+        <div class="header-icon icon-round no-icon">
+          <img class="w-100 rounded-pill" alt="" src="images/profile_1.png" />
+        </div>
+      </div>
+      <h6 class="header-username text-secondary mx-2 mb-0">
+        <select class="form-select bg-transparent cursor-pointer border-0" aria-label="Default select example">
+          <option selected> T. JOBSLONSKI</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </h6>
+      <h6 class="header-time mx-2 mb-0">
+        <input type="time" name="" id="" class="bg-transparent border-0">
+      </h6>
+      <div class="some-icon">
+        <img src="./icons/right-menu.png" alt="" />
+      </div>
+    </div>
+  </header>
+  <div class="row g-0 cShadow">
+    <div class="col-1 main-sidebar bg-white text-center py-3 pb-0">
+      <div class="user-info">
+        <div class="user-avatar mb-4">
+          <img class="w-75 rounded-pill" alt="" src="images/profile_1.png" />
+        </div>
+        <h6 class="user-name text-uppercase text-dark mb-0">T. JOBLONSKI</h6>
+        <p class="mb-0 small user-role text-uppercase text-dark">
+          administrator
+        </p>
+      </div>
+      <div class="navigation-links mt-5">
+        <div class="sidebar-link-wrapper">
+          <a href="#" class="sidebar-link">
+            <img src="icons/buyer.png" alt="" style="margin-left: -4%;">
+            <span class="link-text sidebar-link-label">Dashboard</span>
+          </a>
+        </div>
+        <div class="sidebar-link-wrapper">
+          <a href="#" class="sidebar-link">
+            <img src="icons/Messages.png" alt="" style="margin-left: -10%;">
+            <span class="link-text sidebar-link-label">Message</span>
+          </a>
+        </div>
+        <div class="sidebar-link-wrapper">
+          <a href="#" class="sidebar-link">
+            <img src="icons/buyer.png" alt="" style="margin-left: -6%;">
+            <span class="link-text sidebar-link-label">Byer Persona</span>
+          </a>
+        </div>
+        <div class="sidebar-link-wrapper">
+          <a href="#" class="sidebar-link">
+            <img src="icons/Settings-Icon.png" class="h-100" alt="" style="margin-left: -4%;">
+            <span class="link-text sidebar-link-label">
+              <div>
+                <h6 class="border-bottom border-secondary text-secondary mb-0 py-2">
+                  My Profile
+                </h6>
+                <h6 class="border-bottom border-secondary text-secondary mb-0 py-2">
+                  My Panel
+                </h6>
+                <h6 class="border-bottom border-secondary text-secondary mb-0 py-2">
+                  Security
+                </h6>
+                <h6 class="mb-0 py-2 text-secondary">Log Out</h6>
+              </div>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="calendar_area" class="col-2 text-center py-3 pb-0">
+      <div class="d-flex gap-3 calender-section ms-4">
+        <div id="calendar-to-hide_show" class="calender">
+          <img src="./icons/Calender.png" class="calender-img" />
+          <h6 class="calender-year calender-dates text-secondary">2022</h6>
+          <h5 class="calender-year calender-dates text-secondary">12 DEC</h5>
+          <h5 class="calender-timezone calender-dates text-uppercase text-secondary">
+            alberta, ca
+          </h5>
+        </div>
+        <div  class="hide-btn hide-buton text-nowrap">
+          <button id="hide_show" class="btn buton-hide btn-sm rounded-pill text-uppercase small py-0 mt-3">
+            <i class="fa fa-caret-left"></i> <span style="font-size: 11px;">hide/show</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="move_left_on_toggle" class="col-9 main-section p-3 pb-0">
+      <div class="row cards-row">
+        <div class="col-3">
+          <div class="d-flex align-items-center cCard">
+            <div class="card-icon">
+              <i class="fa fa-users"></i>
+            </div>
+            <div class="bg-primary-bg card-stats d-flex align-items-center gap-2 w-100 justify-content-center">
+              <h2 class="card-count text-white mb-0">38</h2>
+              <h6 class="mb-0 card-text-size text-white ">Total Visitors</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="d-flex align-items-center cCard">
+            <div class="card-icon w-25">
+              <img class="" src="icons/men-women.png" alt="">
+            </div>
+            <div class="bg-primary-bg card-stats d-flex align-items-center gap-2 w-100 justify-content-center">
+              <h2 class="card-count text-white mb-0">59/125</h2>
+              <h6 class="mb-0 card-text-size text-white text-nowrap ">MALE vs FEMALE</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="d-flex align-items-center cCard">
+            <div class="card-icon">
+              <i class="bi bi-hourglass-split"></i>
+            </div>
+            <div class="bg-primary-bg card-stats d-flex align-items-center gap-2 w-100 justify-content-center">
+              <h2 class="card-count text-white mb-0">87</h2>
+              <h6 class="mb-0 card-text-size text-white">AVG. AGE</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="d-flex align-items-center cCard">
+            <div class="card-icon">
+              <i class="bi bi-alarm"></i>
+            </div>
+            <div class="bg-primary-bg card-stats d-flex align-items-center gap-2 w-100 justify-content-center">
+              <h2 class="card-count text-white mb-0">43</h2>
+              <h6 class="mb-0 card-text-size text-white ">AVG. TIME</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bg-white mt-4 p-4 gx-0">
+        <div class="col-5 pb-5">
+          <div class="justify-content-between align-items-center d-flex">
+            <h6 class="d-flex align-items-center gap-3 text-uppercase">
+              Analysis <span class="badge cBadge">6</span>
+            </h6>
+            <div class=" mb-2">
+              <select class="border-dark px-2 rounded-pill" aria-label="Default select example">
+                <option selected="">LAST WEEK</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-center mt-5 gap-4">
+            <div class="text-center">
+              <img src="./icons/45.png" alt="smily" />
+              <h2>45%</h2>
+            </div>
+            <div class="text-center">
+              <img src="./icons/35.png" alt="smily" />
+              <h2>35%</h2>
+            </div>
+            <div class="text-center">
+              <img src="./icons/20.png" alt="smily" />
+              <h2>25%</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 d-flex">
+          <div class="vertical-divider mx-auto"></div>
+        </div>
+        <div class="col-6">
+          <div class="justify-content-between align-items-center d-flex ">
+            <h6 class="d-flex align-items-center gap-3 text-uppercase">
+              Statistics
+            </h6>
+            <div class=" mb-2">
+              <select class="border-dark px-2 rounded-pill" aria-label="Default select example">
+                <option selected="">LAST YEAR</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-9">
+              <canvas class="statisticsChart" height="250px"></canvas>
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-outline-secondary buton-amount-of-visitors btn-sm w-100 text-nowrap mt-2 rounded-pill">
+                <span class="small ">amount of visitors</span>
+              </button>
+              <button
+                class="btn btn-outline-secondary buton-amount-of-visitors btn-sm w-100 text-nowrap mt-2 rounded-pill">
+                male vs female
+              </button>
+              <button class="btn btn-outline-secondary buton-amount-of-visitors btn-sm w-100 mt-2 rounded-pill">
+                avg. age
+              </button>
+              <button class="btn btn-outline-secondary buton-amount-of-visitors btn-sm w-100 mt-2 rounded-pill">
+                avg. time
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row bg-white mt-4 p-3 gx-0">
+        <div class="col-3">
+          <div class="justify-content-between align-items-center d-flex pt-3">
+            <h6 class="d-flex align-items-center gap-3 text-uppercase">
+              Male vs Female
+            </h6>
+            <div class="dropdown practice-dropdown rounded-circle dots-dropdown">
+              <!-- <button class="dropbtn"> -->
+                <button class="btn dropdown py-2 mb-3 btn-outline-secondary btn-sm rounded-circle">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+              <div class="dropdown-content">
+                <a href="#">Male</a>
+                <a href="#">Female</a>
+                <a href="#">Both</a>
+              </div>
+            <!-- </button> -->
+            </div>
+          </div>
+          <div class="d-flex gap-5 mt-5 justify-content-center">
+            <div class="text-center">
+              <img src="icons/MALE.png" alt="" />
+              <h2 class="pt-2">45%</h2>
+            </div>
+            <div class="text-center">
+              <img src="icons/feMALE.png" alt="" />
+              <h2 class="pt-2">55%</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 d-flex">
+          <div class="vertical-divider mx-auto"></div>
+        </div>
+        <div class="col-2">
+          <div class="justify-content-between align-items-center d-flex pt-3">
+            <h6 class="d-flex align-items-center gap-3 text-uppercase">
+              ave. dwell time
+            </h6>
+            <div class="dropdown practice-dropdown mb-3 rounded-circle dots-dropdown" >
+                <button class="btn dropdown py-2 mb-3 btn-outline-secondary btn-sm rounded-circle">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="bg_timer text-center pt-4 mt-5">
+              <!-- <h2>3:05</h2> -->
+              <input type="time" name="" id="" class="bg-transparent mt-3 border-0">
+              <small class="px-0 py-0 mx-0">Time</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 d-flex">
+          <div class="vertical-divider mx-auto"></div>
+        </div>
+        <div class="col-5">
+          <div class="d-flex justify-content-between align-items-center pt-3">
+            <h6 class="text-uppercase d-flex">
+              age groups
+              <button
+                class="btn rounded-pill btn-sm d-flex gap-2 ms-3 align-items-baseline py-0 px-0 pe-3 btn-seemore">
+                <span class="badge cBadge">6</span>
+                <div class="">
+                  <select class="border-0   rounded-pill" aria-label="Default select example">
+                    <option selected="">See More</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </button>
+            </h6>
+            <div class=" mb-2">
+              <select class="border-dark px-2 rounded-pill" aria-label="Default select example">
+                <option selected="">LAST WEEK</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <table class="table" style="width: 100%; margin-top: 15px">
+            <thead>
+              <tr>
+                <th>Crowd Size</th>
+                <th>Video1</th>
+                <th>Video</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0:00 - 14:59</td>
+                <td>21</td>
+                <td>2</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>15:00 - 29:59</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>30:00 - 44:59</td>
+                <td>2</td>
+                <td>12</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>45:00 - 59:59</td>
+                <td>5</td>
+                <td>6</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>60:00 - 74:59</td>
+                <td>7</td>
+                <td>5</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>75:00 - 89:59</td>
+                <td>3</td>
+                <td>2</td>
+                <td>5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row bg-white mt-4 p-3 gx-0">
+        <div class="col-6">
+          <div class="justify-content-between align-items-center d-flex">
+            <h6 class="d-flex align-items-center gap-3 text-uppercase pt-3">
+              nationality <span class="badge cBadge">8</span>
+            </h6>
+            <div class=" mt-1">
+              <select class="border-dark px-2 rounded-pill" aria-label="Default select example">
+                <option selected="">LAST MONTH</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <table class="table mt-4" style="width: 100%">
+            <thead>
+              <tr>
+                <th>Crowd Size</th>
+                <th>Video1</th>
+                <th>Video</th>
+                <th>Total</th>
+                <th>Video</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Caucasian %</b></td>
+                <td>21</td>
+                <td>2</td>
+                <td>23</td>
+                <td>2</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td><b>Black %</b></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><b>Hispanic %</b></td>
+                <td>2</td>
+                <td>12</td>
+                <td>14</td>
+
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><b>Asian %</b></td>
+                <td>5</td>
+                <td>6</td>
+                <td>11</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-1 d-flex">
+          <div class="vertical-divider mx-auto"></div>
+        </div>
+        <div class="col-5 h-100px">
+          <div class="justify-content-between align-items-center d-flex pt-3">
+            <h6 class="d-flex align-items-center gap-3 text-uppercase">
+              Reapeated visitors <span class="badge cBadge">8</span>
+            </h6>
+            <div class="dropdown practice-dropdown rounded-pill dots-dropdown" >
+                <button class="btn dropdown py-2 mb-3 btn-outline-secondary btn-sm rounded-circle">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </button>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div>
+          </div>
+          <canvas class="repeated mt-4 map-height"></canvas>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <footer class="pt-5 pb-5 d-flex justify-content-center">
+    <a href="/"><img alt="" src="icons/footer-logo.png" /></a>
+  </footer>
+  <script src="./scripts.js"></script>
+  
+</body>
+
+</html>

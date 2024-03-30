@@ -1,0 +1,440 @@
+body {
+  background-color: #ededed !important;
+}
+.container {
+  max-width: 1920px !important;
+  width: 100% !important;
+  box-shadow: 0px 15px 10px -15px #777;
+}
+.btn_search_bg {
+  background-color: none !important;
+  margin-left: -45px;
+  z-index: 999;
+}
+
+.hide-sec {
+  display: none;
+}
+.action_nav {
+  list-style-type: none;
+  float: right !important;
+}
+.social_nav li {
+  background-color: #529bd4 !important;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  float: left;
+  margin-right: 20px !important;
+  padding-top: 10px;
+}
+.side_btn {
+  width: 33px;
+  height: 24px;
+  float: left;
+  margin-left: 20px !important;
+}
+.admin_logo {
+  text-align: center;
+  margin-left: 15px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.admin_logo h4 {
+  font-size: 15px;
+  float: left;
+}
+/*--- Side Menu---*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+
+.flex-centered {
+  display: flex;
+  align-items: center;
+  height: cover !important;
+  width: 300px !important;
+  margin: 0 auto;
+}
+
+/* ----- Menu ----- */
+
+menu#side-menu {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  max-width: 130px;
+  background-color: #fff;
+  align-items: center;
+}
+
+menu#side-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+menu#side-menu ul li.side-menu-item {
+  border-radius: 10px;
+  list-style-type: none;
+  display: block;
+  margin-top: 40px;
+}
+
+menu#side-menu ul li.side-menu-item .side-menu-item-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+menu#side-menu ul li.side-menu-item .side-menu-icon {
+  padding: 10px 30px 10px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+menu#side-menu ul li.side-menu-item .side-menu-icon svg {
+  position: relative;
+  top: 0.1rem;
+}
+
+menu#side-menu ul li.side-menu-item .side-menu-text {
+  padding: 1rem 0;
+  width: 0;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+menu#side-menu ul li.side-menu-item .side-menu-text a {
+  color: #505050;
+  text-decoration: none;
+}
+
+menu#side-menu ul li.side-menu-item:hover {
+  background: #f4f4f4;
+  width: 270px;
+  border-left: solid 10px #ff00b7;
+  border-right: solid 10px #ff00b7;
+  text-align: right;
+  padding: 10px 30px 10px 30px;
+}
+
+menu#side-menu ul li.side-menu-item:hover .side-menu-text a {
+  color: var(--niceblue);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+.btn-outline-secondary:hover {
+  color: #fff;
+  /* background-color: #6c757d;
+  border-color: #6c757d; */
+}
+menu#side-menu:hover > ul li.side-menu-item .side-menu-text {
+  opacity: 1;
+  padding-right: 1.5rem;
+  width: 100%;
+  min-width: 200px;
+  transition: all 0.15s ease-in-out;
+}
+
+/* ----- SVG Icons - svgicons.sparkk.fr ----- */
+
+menu#side-menu ul li.side-menu-item .svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+menu#side-menu ul li.side-menu-item .svg-icon path,
+menu#side-menu ul li.side-menu-item .svg-icon polygon,
+menu#side-menu ul li.side-menu-item .svg-icon rect {
+  fill: #cecece;
+}
+
+menu#side-menu ul li.side-menu-item .svg-icon circle {
+  stroke: #cecece;
+  stroke-width: 1;
+}
+
+/* ____________________________________  */
+
+/* header styles  */
+.searchbar-group {
+  position: relative;
+}
+
+input#searchbar {
+  border-radius: 50px;
+  padding: 8px 20px;
+  border: 1px solid grey;
+  min-width: 250px;
+}
+
+.searchbar-group i.fas.fa-search {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-icon.icon-round {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #529bd4;
+  color: #fff;
+}
+
+.cShadow {
+  box-shadow: 0 -5px 1rem rgb(0 0 0 / 15%) !important;
+}
+
+.sidebar-link-wrapper {
+  margin: 15px 0;
+  width: 100px;
+  overflow: hidden;
+  padding: 10px 5px;
+  transition: 0.3s all ease-in-out;
+}
+
+.sidebar-link-wrapper:hover {
+  width: 240px;
+  border-left: solid 10px #ff00b7;
+  border-right: solid 10px #ff00b7;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+.sidebar-link-wrapper:focus-within {
+  width: 240px;
+  border-left: solid 10px #ff00b7;
+  border-right: solid 10px #ff00b7;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+span.link-text.sidebar-link-label {
+  color: #000;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+.sidebar-link {
+  display: flex;
+  column-gap: 25px;
+  width: 260px;
+  margin-left: 46px;
+  text-decoration: none;
+}
+.dots-dropdown {
+  height: 34px;
+  width: 34px;
+}
+.sidebar-link-icon {
+  font-size: 36px;
+}
+.card-text-size {
+  font-size: 7px;
+}
+.calender {
+  position: relative;
+  width: 140px;
+  margin-left: -21px;
+}
+.hide-buton {
+  margin-left: -6%;
+}
+.bg-primary-bg {
+  background-color: #529bd4;
+}
+.buton-hide {
+  border: 1px solid black;
+}
+h6.calender-year {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+h5.calender-year {
+  top: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 30px;
+  width: 100px;
+}
+
+.calender-dates {
+  font-weight: 700;
+}
+.buton-amount-of-visitors {
+  font-size: 11px;
+  margin-left: -4px;
+}
+.buton-amount-of-visitors:hover {
+  background-color: #4488be;
+  color: white;
+}
+#button-amount-of-visitors:active {
+  background-color: #4488be;
+  color: white;
+}
+#button-amount-of-visitors:focus {
+  background-color: #4488be;
+  color: white;
+}
+.cCard {
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card-icon {
+  font-size: 40px;
+  padding: 10px;
+  color: #4488be;
+}
+
+.card-stats {
+  height: 100%;
+  padding: 10px;
+}
+
+span.badge.cBadge {
+  background: #ff08b7;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-divider {
+  background: grey;
+  width: 2px;
+  height: 120px;
+  display: flex;
+  align-self: center;
+}
+
+.bg_timer {
+  background: url(../icons/time-ring.png) no-repeat;
+  width: 125px;
+  height: 125px;
+}
+.btn-seemore {
+  color: #ff00b7;
+  border: solid 1px #ff00b7;
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: transparent;
+}
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.map-height{
+  height: 4%;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:focus {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: transparent;}

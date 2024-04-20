@@ -429,7 +429,7 @@ span.badge.cBadge {
   display: block;
 }
 .map-height{
-  height: 4%;
+  height: 4opx;
 }
 
 .dropdown-content a:hover {background-color: #ddd;}

@@ -96,12 +96,12 @@ var statistics = new Chart(ctx, {
 
 // hide and show toggle
 
-$(document).ready(function () {
-  $('#hide_show').click(function () {
-    $('#calendar-to-hide_show').toggleClass('hide-sec')
-    $('#calendar_area').toggleClass('col-md-1')
-    $('#move_left_on_toggle').toggleClass('col-md-10')
-  })
-})
+// $(document).ready(function () {
+//   $('#hide_show').click(function () {
+//     $('#calendar-to-hide_show').toggleClass('hide-sec')
+//     $('#calendar_area').toggleClass('col-md-1')
+//     $('#move_left_on_toggle').toggleClass('col-md-10')
+//   })
+// })
 
 // hide and show toggle
